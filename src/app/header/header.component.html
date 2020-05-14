@@ -1,0 +1,58 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Recipe Book</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav  mr-auto">
+      <li class="nav-item" routerLinkActive="active" *ngIf="isUserAuth">
+        <a class="nav-link"
+          routerLink="/recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link"
+          routerLink="/shopping-list">
+          Shopping List
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" style="cursor:pointer;" *ngIf="isUserAuth"
+        (click)="logOut()">
+          Log Out
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!isUserAuth">
+        <a class="nav-link"
+          routerLink="/auth">
+          Auth
+        </a>
+      </li>
+      <li class="nav-item dropdown" appDropdown *ngIf="isUserAuth">
+        <a class="nav-link dropdown-toggle" style="cursor:pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage
+        </a>
+        <div class="dropdown-menu" appDropdown aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item"
+          style="cursor:pointer;"
+          (click)="onSave()">Save Data</a>
+          <a class="dropdown-item"
+          style="cursor:pointer;"
+          (click)="onFetchRecipes()">Fetch Data</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Hero -->
+<div id="carouselExampleSlidesOnly" class="carousel slide  mb-3" data-ride="carousel">
+  <div class="carousel-inner" style="max-height:200px">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="First slide">
+    </div>>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.dropdown.show > .dropdown-menu {
+  display: block;
+}
+.btn-group.show > .dropdown-menu {
+  display: block;
+}
+form [formControlName].ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+form .help-block {
+  color: red;
+}

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>{{ recipeSelected.name }}</h3>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <!-- TODO: Manage Recipe should be outside details. -->
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn btn-dark dropdown-toggle">
+        Manage Recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor:pointer;" (click)="onClickToShoppList()">To Shopping List</a></li>
+        <li><a style="cursor:pointer;" (click)="onEditRecipe()">Edit Recipe</a></li>
+        <li><a style="cursor:pointer;" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <img class="card-img-left card-img h-100 img-responsive"
+      [src]="recipeSelected.imagePath"
+      alt="{{ recipeSelected.name }}">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <strong>Description:</strong>
+    <p>{{recipeSelected.description}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <strong>Ingredients:</strong>
+    <ul class="list-group">
+      <li *ngFor="let ingredient of recipeSelected.ingredients" class="list-group-item d-flex justify-content-between align-items-center">
+        {{ingredient.name}}
+        <span class="badge badge-dark badge-pill">{{ingredient.amount}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

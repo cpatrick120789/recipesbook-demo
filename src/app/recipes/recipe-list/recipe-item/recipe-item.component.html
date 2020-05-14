@@ -1,0 +1,20 @@
+<div>
+<a [routerLink]="[id]"
+  routerLinkActive="active"
+  class="card bg-light mb-3"
+  style="cursor:pointer;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img class="card-img-left card-img h-100 img-responsive"
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.name }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+      </div>
+    </div>
+  </div>
+</a>
+</div>
